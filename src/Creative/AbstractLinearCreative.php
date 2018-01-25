@@ -270,11 +270,12 @@ abstract class AbstractLinearCreative extends AbstractNode
     /**
      * @param string $event
      * @param string $url
+     * @param string $offset
      *
      * @return $this
      * @throws \Exception
      */
-    public function addTrackingEvent($event, $url)
+    public function addTrackingEvent($event, $url, $offset = null)
     {
         if (!in_array($event, $this->getEventList())) {
             throw new \Exception(sprintf('Wrong event "%s" specified', $event));
@@ -286,6 +287,11 @@ abstract class AbstractLinearCreative extends AbstractNode
         
         // add event attribute
         $trackingDomElement->setAttribute('event', $event);
+        
+        // add offset attribute
+        if ($offset) {
+            $trackingDomElement->setAttribute('offset', $offset);
+        }
         
         // create cdata
         $cdata = $this->linearCreativeDomElement->ownerDocument->createCDATASection($url);
