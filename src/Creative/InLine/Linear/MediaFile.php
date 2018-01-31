@@ -14,6 +14,10 @@ class MediaFile
         $this->domElement = $domElement;
     }
     
+    public function getDomElement() {
+        return $this->domElement;
+    }
+    
     public function setProgressiveDelivery()
     {
         $this->domElement->setAttribute('delivery', self::DELIVERY_PROGRESSIVE);
