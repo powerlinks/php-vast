@@ -76,4 +76,24 @@ class MediaFile
         $this->domElement->setAttribute('bitrate', (int) $bitrate);
         return $this;
     }
+    
+    /**
+     * @param int $isScalable
+     * @return $this
+     */
+    public function setIsScalable($isScalable)
+    {
+        $this->domElement->setAttribute('isScalable', $isScalable);
+        return $this;
+    }
+    
+    /**
+     * @param int $maintainAspectRatio
+     * @return $this
+     */
+    public function setMaintainAspectRatio($maintainAspectRatio)
+    {
+        $this->domElement->setAttribute('maintainAspectRatio', $maintainAspectRatio);
+        return $this;
+    }
 }
