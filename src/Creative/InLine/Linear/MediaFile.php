@@ -73,7 +73,7 @@ class MediaFile
      */
     public function setBitrate($bitrate)
     {
-        $this->domElement->setAttribute('bitrate', (int) $bitrate);
+        $this->domElement->setAttribute('bitrate', $bitrate);
         return $this;
     }
     
